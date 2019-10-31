@@ -8,5 +8,5 @@ class InteractiveRecord
   end
 
 
-  
+
 end
