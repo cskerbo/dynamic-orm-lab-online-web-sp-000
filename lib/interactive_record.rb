@@ -62,7 +62,7 @@ def self.find_by(attribute)
     WHERE #{attribute_key} = #{attribute_value}
     LIMIT 1
   SQL
-  DB[:conn].execute(sql)
+  row = DB[:conn].execute(sql)
 end
 
 end
