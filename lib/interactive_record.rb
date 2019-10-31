@@ -57,7 +57,7 @@ def self.find_by(attribute)
   sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE #{self.class.values_for_insert} = ?
+    WHERE #{self.values_for_insert} = ?
   SQL
   DB[:conn].execute(sql, attribute)
 end
