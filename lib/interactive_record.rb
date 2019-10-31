@@ -54,13 +54,14 @@ def self.find_by_name(name)
 end
 
 def self.find_by(attribute)
-  find = attribute.class.values_for_insert
+  attribute_key = attribute.keys.join()
+  attribute_value = attribute.values.first
   sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
-    WHERE #{find} = ?
+    WHERE #{attribute_key} = #{attribute_value}
   SQL
-  DB[:conn].execute(sql, attribute)
+  DB[:conn].execute(sql,)
 end
 
 end
