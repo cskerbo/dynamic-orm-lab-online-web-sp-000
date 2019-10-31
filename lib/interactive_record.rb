@@ -54,6 +54,7 @@ def self.find_by_name(name)
 end
 
 def self.find_by(attribute)
+  find = attribute.class.values_for_insert
   sql = <<-SQL
     SELECT *
     FROM #{self.table_name}
